@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@media( max-width : 1500px) {/*가로길이 1500px 이하일때*/
+	body{
+		width:1500px; 		 /*가로 길이*/
+		overflow-x: scroll;
+	}
+	#LoginForm{
+		width:310px; 		 /*좌측 로그인폼 크기*/
+		padding: 1px;
+	}
+	#MenuBoard{				 /*우측 게시글등 보여지는곳 크기*/
+		width:1185px;
+		display:inline-block;
+		margin-left:5px;
+		background-color: #E9ECEF;
+	}
+	/*navar css/반응형때문에 화면 깨져버려서 고정시킴*/
+	#nav{					 /*navbar크기지정*/
+		width:1500px;
+		height:56px;
+	}
+	#nav a{					 /*id가 nav안에있는 a태그 글자색 지정*/
+		color:white;
+	}
+	#nav form{				 /*id가 nav안에있는 form태그 넓이 지정*/
+		width:258px;
+	}
+	#nav form input{		 /*id가 nav안에있는 form의 input 넓이 지정*/
+		width:200px;
+	}
+	#nav form button{		 /*id가 nav안에있는 form의 button 넓이 지정*/
+		width:58px;
+		color:white;
+	}
+	#nav div div a{			 /*id가 nav안에있는 div안의 div의 a태그 글자색 지정(dropdown-menu)*/
+		color:black;
+	}
+	/*////게시글목록////*/
+ 	#alllist{
+		text-align: center;
+		border: 1px solid #454d55;
+		width:1184px;
+		margin-left:1px;
+	}
+	#alllist tr:nth-child(1) th:nth-child(1){/*첫번째 tr의 th첫번째 너비지정*/
+		width:237px;
+	}
+	#alllist tr:nth-child(1) th:nth-child(2){/*첫번째 tr의 th두번째 너비지정*/
+		width:501.5px;
+	}
+	#alllist tr:nth-child(1) th:nth-child(3){/*첫번째 tr의 th세번째 너비지정*/
+		width:355.5px;
+	} 
+	#alllist tr:nth-child(1) th:nth-child(4){/*첫번째 tr의 th세번째 너비지정*/
+		width:100px;
+	} 
+}
+@media ( min-width : 1501px){/*가로길이 1501px 이상일때*/
+	body{
+		width:100%;
+	}
+	#LoginForm{				 /*전체 100%중 20%차지*/
+		width:20%;
+		padding: 1px;
+	}
+	#MenuBoard{				 /*전체 100%중 80%차지*/
+		width:79%;
+		margin-left:1px;
+		background-color: #E9ECEF;
+	}
+	/*navar css*/
+	#nav a{					 /*id가 nav안에있는 a태그 글자색 지정*/
+		color:white;
+	}
+	#nav form button{		 /*id가 nav안에있는 form의 button 넓이 지정*/
+		color:white;
+	}
+	#nav div div a{			 /*id가 nav안에있는 div안의 div의 a태그 글자색 지정(dropdown-menu)*/
+		color:black;
+	}
+	/*////게시글 목록////*/
+ 	#alllist{/*게시글 목록 id*/
+		text-align: center;
+		border: 1px solid #454d55;
+		width:100%;
+		margin-left:1px;
+	}
+ 	 #alllist tr:nth-child(1) th:nth-child(1){/*첫번째 tr의 th첫번째 너비지정*/
+		width:20%;
+	}
+	#alllist tr:nth-child(1) th:nth-child(2){/*첫번째 tr의 th두번째 너비지정*/
+		width:auto;
+	}
+	#alllist tr:nth-child(1) th:nth-child(3){/*첫번째 tr의 th세번째 너비지정*/
+		width:20%;
+	}   
+	#alllist tr:nth-child(1) th:nth-child(4){/*첫번째 tr의 th세번째 너비지정*/
+		width:10%;
+	} 
+}

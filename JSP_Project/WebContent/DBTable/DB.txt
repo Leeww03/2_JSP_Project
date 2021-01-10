@@ -1,0 +1,86 @@
+alter session set "_ORACLE_SCRIPT"=true; 	//오라클 ##사용을 막음
+CREATE USER jspproject IDENTIFIED BY 8533;	//유저생성(ID=jspproject,PW=8533)
+GRANT CREATE SESSION TO jspproject;			//session권한
+GRANT dba TO jspproject;					//DBA권한
+
+CREATE TABLE USER_INFO(
+	userNum NUMBER(1) NOT NULL,				
+	name VARCHAR2(20) NOT NULL,				
+	rrn VARCHAR2(14) NOT NULL,				
+	id VARCHAR2(20) NOT NULL PRIMARY KEY,	
+	pw VARCHAR2(20) NOT NULL,				
+	gender VARCHAR2(4) NOT NULL,			
+	address VARCHAR2(50) NOT NULL,			
+	tel VARCHAR2(13) NOT NULL,				
+	email VARCHAR2(30) NOT NULL,			
+	img VARCHAR(455)		
+);
+
+INSERT INTO USER_INFO VALUES(0,'관리자','000000-0000000','root','1234','남자','관리자입니다','000-0000-0000','root@root.com','관리자.png');
+/////관리자 계정 Insert/////
+INSERT INTO USER_INFO VALUES(1,'일반사용자','000000-0000000','test','1234','남자','일반사용자입니다','000-0000-0000','user@user.com','일반사용자.png');
+/////Test용 일반유저 계정 Insert/////
+INSERT INTO USER_INFO VALUES(1,'일반사용자','000000-0000000','idlongidlongidlong','1234','남자','일반사용자입니다','000-0000-0000','user@user.com','일반사용자.png');
+/////Test용 일반유저 계정 Insert/////
+SELECT * FROM USER_INFO;
+/////USER_INFO 테이블 조회/////
+
+/////게시판 테이블/////
+CREATE TABLE Board(
+	bnum NUMBER PRIMARY KEY,			//게시글 번호
+	bid VARCHAR2(20) NOT NULL,			//작성자 ID
+	btag VARCHAR2(20) NOT NULL,			//게시글 태그
+	btitle VARCHAR(50) NOT NULL,		//게시글 제목
+	content VARCHAR(4000) NOT NULL,		//게시글 내용
+	bdate DATE NOT NULL,				//작성한 날짜
+	img VARCHAR2(455),					//등록한 이미지
+	CONSTRAINT fk_id FOREIGN KEY(bid)	//외래키 등록
+	REFERENCES USER_INFO(id)
+	ON DELETE CASCADE
+)
+ALTER TABLE Board ADD count NUMBER DEFAULT 0 NOT NULL;//게시판 조회수 컬럼 추가
+/////게시판 시퀀스/////
+CREATE SEQUENCE Board_Num
+INCREMENT BY 1	//증가값
+START WITH 1	//시작값	
+MINVALUE 1		//최소값
+NOMAXVALUE		//최대값(무한)
+NOCYCLE			//MAX값도달시 순환X
+NOCACHE;		//캐싱X
+/////오라클은 ON UPDATE CASCADE가 없어 TRIGGER로 기능 구현/////
+CREATE OR REPLACE TRIGGER trigger_idchange
+  AFTER UPDATE ON USER_INFO FOR EACH ROW
+  BEGIN
+    UPDATE Board
+    SET bid=:NEW.id
+    WHERE bid=:OLD.id;
+END;
+/
+/////댓글 테이블/////
+CREATE TABLE User_Comment(
+  bnum NUMBER NOT NULL,				//게시글 번호
+  cnum NUMBER NOT NULL PRIMARY KEY, //댓글 번호
+  id varchar2(20) NOT NULL,			//게시자 ID
+  cmt varchar(100) NOT NULL,		//댓글
+  cdate DATE NOT NULL,				//댓글 등록 날짜
+  CONSTRAINT c_id FOREIGN KEY(id) REFERENCES USER_INFO(id)
+ON DELETE CASCADE
+);
+/////댓글 시퀀스/////
+CREATE SEQUENCE Comment_Num
+INCREMENT BY 1	//증가값
+START WITH 1	//시작값	
+MINVALUE 1		//최소값
+NOMAXVALUE		//최대값(무한)
+NOCYCLE			//MAX값도달시 순환X
+NOCACHE;		//캐싱X
+/////트리거/////
+CREATE OR REPLACE TRIGGER trigger_cidchange
+  AFTER UPDATE ON USER_INFO FOR EACH ROW
+  BEGIN
+    UPDATE User_Comment
+    SET id=:NEW.id
+    WHERE id=:OLD.id;
+END;
+/
+

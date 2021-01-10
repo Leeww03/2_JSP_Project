@@ -1,0 +1,320 @@
+@charset "utf-8";
+#bodybg{/*전체 페이지 배경색*/
+	background-color: #E9ECEF;
+}
+#bmain{ /*navbar밑 바디부분*/
+	padding:0px;
+	height:100%
+}
+
+#main { /*좌측 form*/
+	height:100%;
+	margin: 0px;
+	padding: 1px;
+	border-radius:0px; /*태두리 둥글게 안함(각지게만듬)*/
+}
+#loginmain{/*좌측 로그인창 로그인후 버튼위 이미지 및 글자*/
+	height:150px;
+}
+#loginmain div{/*좌측 로그인창 로그인후 버튼위 이미지 및 글자*/
+	 width:50%;
+	 float:left;
+}
+#loginmain div:nth-child(2){/*#loginmain안에 div중 2번째div*/
+	text-align: center;
+	padding-top: 7%;
+}
+#loginmain div img{
+	border-radius: 50%; /*loginmain안에 div태그 안에있는 img태그 이미지 둥글게*/
+}
+#loginmain div:nth-child(2) button{/*#loginmain안에 div중 2번째div*/
+	background-color: #343A40;
+	border:#343A40;
+}
+#loginbtn{/*좌측 로그인 창 버튼들*/
+	text-align: center;
+	margin-top: 3px;
+}
+#loginbtn button{
+	background-color: #343A40;/*배경색*/
+	border:#343A40;/*태두리 색*/
+}
+/*새창 로그인폼*/
+#windowlogin{
+	margin:10px;
+}
+#windowlogin button{
+	background-color: #343A40;/*배경색*/
+	border:#343A40;/*태두리 색*/
+}
+#signForm{/*회원가입 form*/
+	margin:10px;
+}
+/*로그인 폼 하단 게시판 목록*/
+#leftsideboardlist tr:nth-child(1) th{
+	background-color: #343A40;
+	color:white;
+	width:100%;
+	text-align: center;
+}
+#leftsideboardlist tr:nth-child(4) th{
+	background-color: #343A40;
+	color:white;
+	width:100%;
+	text-align: center;
+}
+#leftsideboardlist a{
+	color:black;
+}
+/*메인폼 우측 게시판 List*/
+#Main{
+	float:left;
+	width:33.3%;
+}
+#Main table tr:nth-child(1) th{
+	text-align: center;
+	background-color: #343A40;
+	color:white;
+}
+#Mainuser{
+	text-align: center;
+	background-color: #343A40;
+	color:white;
+	white-space: nowrap;
+}
+#Maintitle{
+	text-align: center;
+	background-color: #343A40;
+	color:white;
+}
+#Mainidtd{
+	text-align: center;
+	white-space: nowrap;
+}
+#Maintitletd{
+	height:55px;
+}
+#Maintitletd a{
+	color:black;
+}
+#Maintitlelist{
+	display:inline-block;
+	width:290px;
+	white-space: nowrap;/*줄바꿈 X*/
+	overflow: hidden;/*width넘으면 자름*/
+	text-overflow: ellipsis;/*잘리는부분이있으면 .. 표시*/
+}
+/*검색이랑 태그게시판 제목글자색*/
+#alllist a{
+	color:black;
+}
+/*회원가입폼css/회원정보 수정css*/
+#userin button{
+	background-color: #343A40;
+	border:#343A40;
+}
+/*유저 목록*/
+#userList{
+	width:500px;
+	table-layout:fixed;/*너비 고정*/
+	word-break:break-all;/*줄바꿈*/
+	text-align: center;/*텍스트 중앙정렬*/
+}
+#userList thead tr th:nth-child(1){/*th너비 지정*/
+	width:170px;
+}
+#userList thead tr th:nth-child(2){
+	width:200px;
+}
+#userList thead tr th:nth-child(3){
+	width:60px;
+}
+#userList thead tr th:nth-child(4){
+	width:70px;
+}
+#userList a{
+	color:red;
+}
+#userbody{
+	overflow-y: hidden;/*가로스크롤 제거*/
+	overflow-x: hidden;/*세로스크롤 제거*/
+}
+/*유저 정보보기 css*/
+#userinfoview{/*테이블 너비 지정*/
+	width:500px;
+}
+#userinfoview tr:nth-child(1) th{/*userInfoview에 첫번째 tr안에있는 th의 글자 중앙정렬*/
+	text-align: center;
+}
+#userinfoview tr:nth-child(2) td:nth-child(1){/*userInfoview에 두번째 tr안에있는 첫번째 td너비 지정*/
+	width:150px;
+}
+#userinfoview tr:nth-child(2) td:nth-child(2){/*userInfoview에 두번째 tr안에있는 두번째 td너비 지정*/
+	width:350px;
+}
+#userinfoview tr td img{/*userInfoview안에 tr속 td안에 img 가로 세로 크기 지정*/
+	width:150px;
+	height:150px;
+}
+
+/*게시판*/
+#Writetable{/*게시글 작성 form*/
+	border:white;
+}
+#Writetable tr:nth-child(1) th{
+	background-color: #eeeeee;/*배경색*/
+	text-align: center;/*글자 중앙 정렬*/
+}
+#Writetable tr:nth-child(4) td:nth-child(2) textarea{/*textarea크기 지정*/
+	width:100%;
+	height:700px;
+} 
+#writebtn{/*게시글 작성 버튼*/
+	background-color: #343A40;/*배경색*/
+	border:#343A40;/*태두리 색*/	
+	float:right;
+}
+/*게시글css*/
+#viewtable{
+	word-break:break-all;
+	border:2px solid #454d55;
+}
+#viewtable tr:nth-child(1) th{
+	background-color: #343A40;
+	color:white;
+	text-align: center;
+}
+#viewtable td{
+	border-bottom:2px solid #343A40;
+}
+#viewtable tr:nth-child(2) td:nth-child(1){
+	width:200px;
+}
+#viewtable tr:nth-child(2) td:nth-child(2){
+	width:auto;
+}
+#viewtable tr:nth-child(5) td:nth-child(2){
+	text-align: center;
+}
+#viewtable tr:nth-child(5) td:nth-child(2) img{
+	width:1000px;
+}
+/*게시글 수정/삭제 버튼*/
+#userviewboard{
+	float:right;
+}
+#userviewboard button{
+	background-color: #343A40;
+	border:1px solid white;
+	color:white;
+}
+/*댓글 보여주는 css*/
+#viewcomment{
+	border:2px solid #343A40;
+}
+#viewcomment a{
+	color:red;
+}
+#viewcomment tr:nth-child(1) th{
+	background-color: #343A40;
+	color:white;
+	text-align: center;
+}
+#viewcomment tr:nth-child(2) th{
+	border:2px solid #343A40;
+	text-align: center;
+}
+#view1{
+	width:200px;
+	border:2px solid #343A40;
+}
+#view2{
+	width:auto;
+	border:2px solid #343A40;
+}
+#view3{
+	width:180px;
+	border:2px solid #343A40;
+}
+#view4{
+	width:150px;
+	text-align: center;
+	border:2px solid #343A40;
+}
+#notcomment{
+	text-align: center;
+}
+#recommentbtn{
+	background-color: #343A40;
+	border:1px solid white;
+	color:white;
+}
+/*댓글 등록css*/
+#incomment table{
+	background-color: #343A40;
+	color:white; 
+}
+#incomment table tr:nth-child(1) th{
+	text-align: center;
+}
+#incomment table tr:nth-child(2) td:nth-child(1){
+	width:auto;
+}
+#incomment table tr:nth-child(2) td:nth-child(1) textarea{
+	width:100%;
+}
+#incomment table tr:nth-child(2) td:nth-child(2){
+	width:100px;
+	padding-top:20px;
+}
+#incomment table tr:nth-child(2) td:nth-child(2) input{
+	background-color: #343A40;
+	border:1px solid white;
+	color:white;
+}
+/*댓글 수정 css*/
+#cmtchange{
+	width:600px;
+	overflow: hidden;
+}
+#cmtchange form table tr:nth-child(1) th{
+	text-align: center;
+	background-color: #343A40;
+	color:white;
+}
+#cmtchange form table tr:nth-child(2) td:nth-child(1) {
+	width:auto;
+	padding:1px;
+}
+#cmtchange form table tr:nth-child(2) td:nth-child(1) textarea{
+	width:100%;
+}
+#cmtchange form table tr:nth-child(2) td:nth-child(2){
+	width:100px;
+}
+
+/*id pw찾기 css*/
+#findinfo{
+	padding:10px;
+}
+#findinfo button{
+	background-color: #343A40;
+	border:1px solid white;
+	color:white;
+}
+/*상단 이미지 Header*/
+#HeaderForm{
+	padding: 0%;
+	background-color: white;
+	color:black
+}
+/*하단부 Footer*/
+address{
+	margin-bottom: 0px;
+}
+footer{
+	background-color: #343A40;
+	color:white;
+	text-align: center;
+	margin-top:10px;
+}
