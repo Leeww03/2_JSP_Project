@@ -11,7 +11,7 @@ public class UserInfo {
 	private String tel;
 	private String email;
 	private String img;
-	
+	 
 	public int getNum() {return num;}
 	public void setNum(int num) {this.num = num;}
 	
