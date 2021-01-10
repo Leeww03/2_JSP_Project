@@ -8,7 +8,7 @@ public class DBConnection {
 		Connection conn = null;
 		try {
 		String url="jdbc:oracle:thin:@localhost:1521:testdb";	//디비주소
-		String id="jspproject";									//디ㅣㅂID
+		String id="jspproject";									//디비ID
 		String pass="8533";										//디비PW
 		Class.forName("oracle.jdbc.driver.OracleDriver");		//드라이버
 		conn=DriverManager.getConnection(url,id,pass);
